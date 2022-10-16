@@ -13,4 +13,4 @@ export default {
 
 const Template = (args) => <Component {...args} />;
 
-export const Default = Template.bind({
+export const Default = Template.bind({});
