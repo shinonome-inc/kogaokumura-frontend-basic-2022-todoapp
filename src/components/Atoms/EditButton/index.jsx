@@ -35,7 +35,6 @@ const StyledButton = styled.button`
   align-items: center;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
   background-color: transparent;
   border: none;
   &:hover > ${HoverCircle} {
