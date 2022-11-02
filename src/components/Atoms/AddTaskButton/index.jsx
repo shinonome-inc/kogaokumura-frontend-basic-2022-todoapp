@@ -16,8 +16,6 @@ export default AddTaskButton;
 
 const StyledAddButton = styled.button`
   display: flex;
-  width: 126px;
-  height: 24px;
   padding: 2px 6px;
   border-radius: 12px;
   background-color: transparent;
