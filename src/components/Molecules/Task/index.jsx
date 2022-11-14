@@ -7,21 +7,21 @@ import Input from "../../Atoms/Input";
 import EditButton from "../../Atoms/EditButton";
 
 const Task = ({ checked, taskName, onEditComplete }) => {
-  const [nowOnEdit, setNowOnEdit] = useState(true); //デフォルトはtrueかfalse
+  const [OnEdit, setOnEdit] = useState(true);
 
   const stateEditButton = () => {
-    setNowOnEdit(true);
+    setOnEdit(true);
   };
   return (
     <TaskWrapper>
       <Checkbox onClick={checked} />
       <TaskContainer>
-        {nowOnEdit ? (
+        {OnEdit ? (
           <Input
             defaultValue={taskName}
             onEditComplete={(taskName) => {
               onEditComplete(taskName);
-              setNowOnEdit(false);
+              setOnEdit(false);
             }}
           />
         ) : (
@@ -36,7 +36,7 @@ const Task = ({ checked, taskName, onEditComplete }) => {
 };
 export default Task;
 
-const EachTaskWrapper = styled.div`
+const TaskWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
