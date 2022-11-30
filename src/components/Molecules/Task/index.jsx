@@ -6,22 +6,22 @@ import Checkbox from "../../Atoms/Checkbox";
 import Input from "../../Atoms/Input";
 import EditButton from "../../Atoms/EditButton";
 
-const Task = ({ onClick, taskName, onEditComplete }) => {
-  const [OnEdit, setOnEdit] = useState(true);
+const Task = ({ onClick, taskName, onEditComplete, defaultIsEditing }) => {
+  const [isEditing, setIsEditing] = useState(defaultIsEditing);
 
   const stateEditButton = () => {
-    setOnEdit(true);
+    setIsEditing(true);
   };
   return (
     <TaskWrapper>
       <Checkbox onClick={onClick} />
       <TaskContainer>
-        {OnEdit ? (
+        {isEditing ? (
           <Input
             defaultValue={taskName}
             onEditComplete={(taskName) => {
               onEditComplete(taskName);
-              setOnEdit(false);
+              setIsEditing(false);
             }}
           />
         ) : (
