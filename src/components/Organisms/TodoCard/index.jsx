@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Addtaskbutton from "../../Atoms/AddTaskButton";
+import AddTaskButton from "../../Atoms/AddTaskButton";
 import Task from "../../Molecules/Task";
 import styled from "styled-components";
-const Todocard = () => {
+const TodoCard = () => {
   const [task, setNewTask] = useState([]);
   const pushAddbutton = () => {
     setNewTask([...task, { name: "", state: "TODO" }]);
@@ -20,7 +20,7 @@ const Todocard = () => {
             }
             setNewTask(editedTask);
           }}
-          pushCheckbox={() => {
+          onClick={() => {
             let editedTask = [...task];
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
@@ -34,14 +34,14 @@ const Todocard = () => {
     }
   });
   return (
-    <StyledTodocard>
-      <Addtbutton onClick={pushAddbutton} />
+    <StyledTodoCard>
+      <AddTaskButton onClick={pushAddbutton} />
       <StyledTaskList>{editingTask}</StyledTaskList>
-    </StyledTodocard>
+    </StyledTodoCard>
   );
 };
-export default Todocard;
-const StyledTodocard = styled.div`
+export default TodoCard;
+const StyledTodoCard = styled.div`
   width: 500px;
   padding: 20px 20px 6px;
   background-color: ${COLOR.LIGHT_BLACK};
