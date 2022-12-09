@@ -1,55 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import plus from "../../../assets/svg/plus.svg";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
-import Checkbox from "../../Atoms/Checkbox";
-import Input from "../../Atoms/Input";
-import EditButton from "../../Atoms/EditButton";
 
-const Task = ({ onClick, taskName, onEditComplete, defoultIsEditing }) => {
-  const [isEditing, setIsEditing] = useState(defoultIsEditing);
-
-  const stateEditButton = () => {
-    setIsEditing(true);
-  };
+const AddTaskButton = ({ onClick }) => {
   return (
-    <TaskWrapper>
-      <Checkbox onClick={onClick} />
-      <TaskContainer>
-        {isEditing ? (
-          <Input
-            defaultValue={taskName}
-            onEditComplete={(taskName) => {
-              onEditComplete(taskName);
-              setIsEditing(false);
-            }}
-          />
-        ) : (
-          <TextContainer>
-            <TaskText>{taskName}</TaskText>
-            <EditButton onClick={stateEditButton} />
-          </TextContainer>
-        )}
-      </TaskContainer>
-    </TaskWrapper>
+    <StyledAddButton onClick={onClick}>
+      <Img src={plus} />
+      <StyledAddText>タスクを追加</StyledAddText>
+    </StyledAddButton>
   );
 };
-export default Task;
+export default AddTaskButton;
 
-const TaskWrapper = styled.div`
+const StyledAddButton = styled.button`
   display: flex;
-  align-items: center;
+  padding: 2px 6px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: none;
+  transition: 0.2s;
+  &:hover {
+    background-color: rgba(70, 163, 129, 0.2);
+    cursor: pointer;
+  }
 `;
-const TextContainer = styled.div`
-  display: flex;
-  width: 216px;
-  justify-content: space-between;
+
+const Img = styled.img`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 `;
-const TaskContainer = styled.div`
-  margin-left: 10px;
-`;
-const TaskText = styled.p`
-  color: ${COLOR.LIGHT_GRAY};
+
+const StyledAddText = styled.div`
+  color: ${COLOR.GREEN};
   ${TEXT.S}
-  margin: 0px;
 `;
