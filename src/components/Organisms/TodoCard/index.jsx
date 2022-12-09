@@ -45,10 +45,13 @@ const TodoCard = () => {
 export default TodoCard;
 const StyledTodoCard = styled.div`
   width: 500px;
-  padding: 20px 20px 6px;
+  padding: 22px 26px;
   background-color: ${COLOR.LIGHT_BLACK};
+  border-radius: 4px;
 `;
 const StyledTaskList = styled.div`
-  position: relative;
-  left: 2px;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 6px 20px;
+  gap: 10px;
 `;
