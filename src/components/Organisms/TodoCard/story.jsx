@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Component from "./index";
 
 export default {
   component: Component,
-  title: "Organisms/Todocard",
+  title: "Organisms/TodoCard",
   parameters: {
     backgrounds: {
       default: "dark",
