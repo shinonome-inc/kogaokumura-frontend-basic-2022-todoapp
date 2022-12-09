@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import Task from "../../Molecules/Task";
 import styled from "styled-components";
+import COLOR from "../../../variables/color";
+
 const TodoCard = () => {
   const [task, setNewTask] = useState([]);
   const pushAddbutton = () => {
