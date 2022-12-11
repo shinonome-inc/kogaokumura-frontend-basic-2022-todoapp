@@ -4,9 +4,9 @@ import plus from "../../../assets/svg/plus.svg";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
-const AddTaskButton = ({ checked }) => {
+const AddTaskButton = ({ onClick }) => {
   return (
-    <StyledAddButton onClick={checked}>
+    <StyledAddButton onClick={onClick}>
       <Img src={plus} />
       <StyledAddText>タスクを追加</StyledAddText>
     </StyledAddButton>

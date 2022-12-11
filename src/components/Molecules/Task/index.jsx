@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
@@ -7,7 +7,7 @@ import Input from "../../Atoms/Input";
 import EditButton from "../../Atoms/EditButton";
 
 const Task = ({ onClick, taskName, onEditComplete, defoultIsEditing }) => {
-  const [isEditing, setIsEditing] = useState(true);
+  const [isEditing, setIsEditing] = useState(defoultIsEditing);
 
   const stateEditButton = () => {
     setIsEditing(true);
