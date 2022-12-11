@@ -22,7 +22,7 @@ const TodoCard = () => {
             }
             setNewTask(editedTask);
           }}
-          onClick={() => {
+          stateEditButton={() => {
             let editedTask = [...task];
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
