@@ -13,7 +13,7 @@ const TodoCard = () => {
     if (state == "TODO") {
       return (
         <Task
-          onEditcomplate={(taskName) => {
+          onEditComplete={(taskName) => {
             let editedTask = [...task];
             if (taskName != "") {
               editedTask[index].name = taskName;
@@ -27,8 +27,8 @@ const TodoCard = () => {
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
           }}
-          defaultTaskValue={name}
-          isDefaultEditing="true"
+          taskName={name}
+          defoultIsEditing="true"
         />
       );
     } else {
