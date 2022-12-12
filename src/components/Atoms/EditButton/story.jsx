@@ -15,5 +15,5 @@ const Template = (args) => <Component {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  checked: () => console.log("clicked"),
+  onClick: () => console.log("clicked"),
 };
