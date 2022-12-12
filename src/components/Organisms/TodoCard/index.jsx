@@ -52,6 +52,5 @@ const StyledTodoCard = styled.div`
 const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 12px 6px 20px;
-  gap: 10px;
+  margin: 14px 6px;
 `;
