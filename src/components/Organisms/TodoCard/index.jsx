@@ -22,13 +22,13 @@ const TodoCard = () => {
             }
             setNewTask(editedTask);
           }}
-          stateEditButton={() => {
+          onClick={() => {
             let editedTask = [...task];
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
           }}
           taskName={name}
-          defoultIsEditing="true"
+          defaultIsEditing="true"
         />
       );
     } else {
