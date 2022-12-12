@@ -53,4 +53,5 @@ const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
   margin: 14px 6px;
+  gap: 10px;
 `;
