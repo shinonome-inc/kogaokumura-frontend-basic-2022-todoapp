@@ -10,7 +10,7 @@ const TodoCard = () => {
     setNewTask([...task, { name: "", state: "TODO" }]);
   };
   const editingTask = task.map(({ name, state }, index) => {
-    if (state == "TODO") {
+    if (state === "TODO") {
       return (
         <Task
           onEditcomplate={(taskName) => {
@@ -44,7 +44,6 @@ const TodoCard = () => {
 };
 export default TodoCard;
 const StyledTodoCard = styled.div`
-  width: 500px;
   padding: 22px 26px;
   background-color: ${COLOR.LIGHT_BLACK};
   border-radius: 4px;
