@@ -13,7 +13,7 @@ const TodoCard = () => {
     if (state === "TODO") {
       return (
         <Task
-          onEditComplete={(taskName) => {
+          onEditcomplate={(taskName) => {
             let editedTask = [...task];
             if (taskName != "") {
               editedTask[index].name = taskName;
@@ -27,8 +27,8 @@ const TodoCard = () => {
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
           }}
-          taskName={name}
-          defaultIsEditing="true"
+          defaultTaskValue={name}
+          isDefaultEditing="true"
         />
       );
     } else {
@@ -51,6 +51,6 @@ const StyledTodoCard = styled.div`
 const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 14px 6px;
+  margin: 12px 6px 20px;
   gap: 10px;
 `;
