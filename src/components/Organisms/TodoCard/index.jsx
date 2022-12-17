@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import AddTaskButton from "../../Atoms/AddTaskButton";
-import Task from "../../Molecules/Task";
 import styled from "styled-components";
+import Addtaskbutton from "../../Atoms/AddTaskButton";
+import Task from "../../Molecules/Task";
 import COLOR from "../../../variables/color";
-
 const TodoCard = () => {
   const [task, setNewTask] = useState([]);
-  const pushAddbutton = () => {
+  const pushAddtaskbutton = () => {
     setNewTask([...task, { name: "", state: "TODO" }]);
   };
   const editingTask = task.map(({ name, state }, index) => {
-    if (state === "TODO") {
+    if (state == "TODO") {
       return (
         <Task
-          onEditcomplate={(taskName) => {
+          onEditComplete={(taskName) => {
             let editedTask = [...task];
             if (taskName != "") {
               editedTask[index].name = taskName;
@@ -27,8 +26,8 @@ const TodoCard = () => {
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
           }}
-          defaultTaskValue={name}
-          isDefaultEditing="true"
+          taskName={name}
+          defaultIsEditing="true"
         />
       );
     } else {
@@ -37,7 +36,7 @@ const TodoCard = () => {
   });
   return (
     <StyledTodoCard>
-      <AddTaskButton onClick={pushAddbutton} />
+      <Addtaskbutton onClick={pushAddtaskbutton} />
       <StyledTaskList>{editingTask}</StyledTaskList>
     </StyledTodoCard>
   );
