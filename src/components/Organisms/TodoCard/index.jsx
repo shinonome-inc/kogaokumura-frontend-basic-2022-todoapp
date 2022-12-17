@@ -27,8 +27,8 @@ const TodoCard = () => {
             editedTask[index].state = "DONE";
             setNewTask(editedTask);
           }}
-          defaultTaskValue={name}
-          isDefaultEditing="true"
+          taskName={name}
+          defaultIsEditing="true"
         />
       );
     } else {
