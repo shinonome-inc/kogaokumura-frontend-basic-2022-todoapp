@@ -43,7 +43,9 @@ const TodoCard = () => {
 };
 export default TodoCard;
 const StyledTodoCard = styled.div`
+  width: 500px;
   padding: 22px 26px;
+  margin: 0 auto;
   background-color: ${COLOR.LIGHT_BLACK};
   border-radius: 4px;
 `;
