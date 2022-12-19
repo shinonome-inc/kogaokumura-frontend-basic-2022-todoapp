@@ -9,7 +9,7 @@ const TodoCard = () => {
     setNewTask([...task, { name: "", state: "TODO" }]);
   };
   const editingTask = task.map(({ name, state }, index) => {
-    if (state == "TODO") {
+    if (state === "TODO") {
       return (
         <Task
           onEditComplete={(taskName) => {
