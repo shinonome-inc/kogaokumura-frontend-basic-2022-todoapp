@@ -39,6 +39,7 @@ export default Task;
 const TaskWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin: 14px 6px 0px;
 `;
 const TextContainer = styled.div`
   display: flex;
