@@ -44,7 +44,7 @@ const TodoCard = () => {
 export default TodoCard;
 const StyledTodoCard = styled.div`
   width: 500px;
-  padding: 22px 26px 0px;
+  padding: 20px 26px;
   margin: 0px auto;
   background-color: ${COLOR.LIGHT_BLACK};
   border-radius: 4px;
@@ -52,6 +52,4 @@ const StyledTodoCard = styled.div`
 const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 12px 6px 20px;
-  gap: 10px;
 `;
