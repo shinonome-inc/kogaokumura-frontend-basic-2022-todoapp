@@ -19,7 +19,6 @@ const Input = ({ defaultValue = "", onEditComplete }) => {
 export default Input;
 
 const StyledInput = styled.input`
-  width: 100%;
   color: ${COLOR.LIGHT_GRAY};
   ${TEXT.S}
   background-color: ${COLOR.BLACK};
