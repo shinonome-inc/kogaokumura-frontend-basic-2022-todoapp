@@ -43,11 +43,11 @@ const TaskWrapper = styled.div`
 `;
 const TextContainer = styled.div`
   display: flex;
-  width: 216px;
   justify-content: space-between;
 `;
 const TaskContainer = styled.div`
   margin-left: 10px;
+  flex: 1;
 `;
 const TaskText = styled.p`
   color: ${COLOR.LIGHT_GRAY};

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import BREAKPOINT from "../../../variables/breakpoint";
@@ -14,6 +14,7 @@ const StyledText = styled.div`
   color: ${COLOR.WHITE};
   ${TEXT.M}
   font-family: ${FONTFAMILY.ROBOTO};
+  margin-bottom: 20px;
   @media screen and (min-width: ${BREAKPOINT.MEDIUM}) {
     ${TEXT.L}
   }
