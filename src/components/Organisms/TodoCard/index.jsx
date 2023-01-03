@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Addtaskbutton from "../../Atoms/AddTaskButton";
 import Task from "../../Molecules/Task";
@@ -34,6 +34,16 @@ const TodoCard = () => {
       return null;
     }
   });
+  useEffect(() => {
+    const task = JSON.parse(window.localStorage.getItem("task"));
+    if (task === null) {
+      return;
+    }
+    setNewTask(task);
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem("task", JSON.stringify(task));
+  }, [task]);
   return (
     <StyledTodoCard>
       <Addtaskbutton onClick={pushAddtaskbutton} />
