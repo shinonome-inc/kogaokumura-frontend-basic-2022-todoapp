@@ -5,15 +5,9 @@ import TEXT from "../../../variables/texts";
 import Checkbox from "../../Atoms/Checkbox";
 import Input from "../../Atoms/Input";
 import EditButton from "../../Atoms/EditButton";
-import { useEffect } from "react";
 
 const Task = ({ onClick, taskName, onEditComplete, defaultIsEditing }) => {
   const [isEditing, setIsEditing] = useState(defaultIsEditing);
-  useEffect(() => {
-    if (taskName != "") {
-      setIsEditing(false);
-    }
-  }, []);
 
   const stateEditButton = () => {
     setIsEditing(true);

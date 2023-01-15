@@ -7,19 +7,7 @@ import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 const TodoCard = () => {
   const AlertHandleContext = useAlertHandlerContext();
   const [task, setNewTask] = useState([]);
-  useEffect(() => {
-    const getItemTask = localStorage.getItem("task");
-    if (getItemTask != null) {
-      const parseTask = JSON.parse(getItemTask);
-      setNewTask([...parseTask]);
-    } else {
-      setNewTask([]);
-    }
-  }, []);
-  useEffect(() => {
-    const stringifyTask = JSON.stringify(task);
-    localStorage.setItem("task", stringifyTask);
-  }, [task]);
+
   const pushAddtaskbutton = () => {
     setNewTask([...task, { name: "", state: "TODO" }]);
   };
@@ -33,7 +21,7 @@ const TodoCard = () => {
               editedTask[index].name = taskName;
             } else {
               editedTask[index].state = "DONE";
-              AlertHandleContext.setAlert("タスクの名前が設定されていません。");
+              AlertHandleContext.setAlert("タスク名が設定されていません。");
             }
             setNewTask(editedTask);
           }}

@@ -8,13 +8,7 @@ const Input = ({ defaultValue = "", onEditComplete }) => {
   useEffect(() => {
     ref.current.focus();
     ref.current.value = defaultValue;
-    ref.current.onblur = (e) => {
-      if (ref.current == null) {
-        return;
-      } else {
-        onEditComplete(ref.current.value);
-      }
-    };
+    ref.current.onblur = (e) => onEditComplete(e.target.value);
     ref.current.onkeypress = (e) => {
       if (e.key === "Enter") onEditComplete(e.target.value);
     };
