@@ -12,7 +12,7 @@ const StyledAlert = styled.div`
   padding: 10px 20px;
   margin: 0 auto;
   position: relative;
-  top: 80px;
+  top: 20px;
   color: ${COLOR.WHITE};
   background-color: ${COLOR.RED};
   border-radius: 4px;
@@ -22,6 +22,6 @@ const StyledAlert = styled.div`
     props.isActive ? "translateY(40px)" : "translateY(-40px)"};
   @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
     width: 280px;
-    top: 40px;
+    top: 15px;
   }
 `;
