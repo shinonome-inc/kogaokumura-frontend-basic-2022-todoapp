@@ -3,8 +3,12 @@ import styled from "styled-components";
 import Addtaskbutton from "../../Atoms/AddTaskButton";
 import Task from "../../Molecules/Task";
 import COLOR from "../../../variables/color";
+import BREAKPOINT from "../../../variables/breakpoint";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 const TodoCard = () => {
+  const AlertHandleContext = useAlertHandlerContext();
   const [task, setNewTask] = useState([]);
+
   const pushAddtaskbutton = () => {
     setNewTask([...task, { name: "", state: "TODO" }]);
   };
@@ -18,6 +22,7 @@ const TodoCard = () => {
               editedTask[index].name = taskName;
             } else {
               editedTask[index].state = "DONE";
+              AlertHandleContext.setAlert("タスク名が設定されていません。");
             }
             setNewTask(editedTask);
           }}
@@ -58,6 +63,9 @@ const StyledTodoCard = styled.div`
   margin: 0px auto;
   background-color: ${COLOR.LIGHT_BLACK};
   border-radius: 4px;
+  @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
+    width: 280px;
+  }
 `;
 const StyledTaskList = styled.div`
   display: flex;
